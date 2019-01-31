@@ -16,22 +16,30 @@ def main():
     # TODO: 2. After reading and understanding the m1e module,
     #   ** make a window that shows up. **
     # -------------------------------------------------------------------------
+    root = tkinter.Tk()
+
 
     # -------------------------------------------------------------------------
     # TODO: 3. After reading and understanding the m2e module,
     #   ** put a Frame on the window. **
     # -------------------------------------------------------------------------
+    frame1 = ttk.Frame(root, padding = 10)
+    frame1.grid()
 
     # -------------------------------------------------------------------------
     # TODO: 4. After reading and understanding the m2e module,
     #   ** put a Button on the Frame. **
     # -------------------------------------------------------------------------
+    button1 = ttk.Button(frame1, text = 'buttona')
 
     # -------------------------------------------------------------------------
     # TODO: 5. After reading and understanding the m3e module,
     #   ** make your Button respond to a button-press **
     #   ** by printing   "Hello"  on the Console.     **
     # -------------------------------------------------------------------------
+    button1['command'] = (lambda:print('Hello'))
+    button1.grid()
+
 
     # -------------------------------------------------------------------------
     # TODO: 6. After reading and understanding the m4e module,
@@ -41,6 +49,14 @@ def main():
     #        on the Console if the current string in the Entry box
     #        is the string 'ok', but print "Goodbye" otherwise.
     # -------------------------------------------------------------------------
+    entry_box_1 = ttk.Entry(frame1)
+    entry_box_1.grid()
+
+    print_button = ttk.Button(frame1, text = 'picky hello')
+    print_button["command"] = lambda: picky_print(entry_box_1)
+    print_button.grid()
+
+
 
     # -------------------------------------------------------------------------
     # TODO: 7.
@@ -69,9 +85,30 @@ def main():
     # -------------------------------------------------------------------------
     # TODO: 8. As time permits, do other interesting GUI things!
     # -------------------------------------------------------------------------
+    entry_box_2 = ttk.Entry(frame1)
+    entry_box_2.grid()
 
+    button3 = ttk.Button(frame1,text = 'interger')
+    button3["command"] = lambda: interger_func(entry_box_1, entry_box_2)
+    button3.grid()
+    root.mainloop()
+
+
+def interger_func(entry_box_1, entry_box_2):
+    xxx = entry_box_2.get()
+    bbb = entry_box_1.get()
+    for k in range(int(xxx)):
+        print(bbb)
+
+def picky_print(entry_box_1):
+    if entry_box_1.get() == 'ok':
+        print("Hello")
+    else:
+        print('Goodbye')
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # -----------------------------------------------------------------------------
 main()
+
+

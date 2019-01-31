@@ -46,10 +46,10 @@ def main():
 def print_contents(entry_box):
     """
     Prints onto the Console the contents of the given ttk.Entry.
-    
+
     In this example, it is used as the function that is "CALLED BACK"
     when an event (namely, the pressing of a certain Button) occurs.
-    
+
     Type hints:
       :type entry_box: ttk.Entry
     """
